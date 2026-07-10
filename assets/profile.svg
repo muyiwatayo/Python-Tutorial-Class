@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Portrait illustration of Martins Odeshina">
+  <rect width="240" height="240" rx="120" fill="#0f1d32"/>
+  <circle cx="120" cy="100" r="48" fill="#5eead4"/>
+  <path d="M60 212c10-38 42-58 60-58s50 20 60 58" fill="#8b5cf6"/>
+  <circle cx="102" cy="96" r="6" fill="#07111f"/>
+  <circle cx="138" cy="96" r="6" fill="#07111f"/>
+  <path d="M102 122c10 10 26 10 36 0" stroke="#07111f" stroke-width="6" stroke-linecap="round" fill="none"/>
+</svg>
