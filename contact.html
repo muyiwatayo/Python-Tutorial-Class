@@ -38,9 +38,9 @@
           </ul>
         </div>
         <form id="contactForm" class="contact-form">
-          <input type="text" placeholder="Your name" required />
-          <input type="email" placeholder="Your email" required />
-          <textarea rows="4" placeholder="Tell me about your idea" required></textarea>
+          <input id="cf-name" name="name" type="text" placeholder="Your name" required />
+          <input id="cf-email" name="email" type="email" placeholder="Your email" required />
+          <textarea id="cf-message" name="message" rows="4" placeholder="Tell me about your idea" required></textarea>
           <button type="submit" class="btn btn-primary">Send Message</button>
           <p id="formMessage" class="form-message"></p>
         </form>
@@ -50,6 +50,7 @@
 
   <footer class="site-footer">
     <p>© 2026 Martins Odeshina. Built with HTML, CSS, and Python.</p>
+    <p>Contact: <a href="tel:PHONE_NUMBER">Phone</a> • <a href="mailto:oluwamuyiwaeyitayo@gmail.com">oluwamuyiwaeyitayo@gmail.com</a></p>
   </footer>
 
   <script src="script.js"></script>
