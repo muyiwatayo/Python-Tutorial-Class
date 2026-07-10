@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Martins Odeshina</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="brand">Martins Odeshina</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="certificates.html">Certificates</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section contact-section">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s create something meaningful.</h2>
+      </div>
+      <p class="contact-copy">
+        If you’re looking for a thoughtful portfolio, a simple web project, or a creative partner for a small idea, I’d love to hear about it.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Ways to reach me</h3>
+          <p>Email me for collaborations, enquiries, or quick conversations about your next idea.</p>
+          <p>
+            <strong>Phone:</strong> <a href="tel:PHONE_NUMBER">PHONE_NUMBER</a><br />
+            <strong>Email:</strong> <a href="mailto:oluwamuyiwaeyitayo@gmail.com">oluwamuyiwaeyitayo@gmail.com</a>
+          </p>
+          <ul class="tag-list">
+            <li>Available for projects</li>
+            <li>Open to collaborations</li>
+            <li>Happy to chat about ideas</li>
+          </ul>
+        </div>
+        <form id="contactForm" class="contact-form">
+          <input id="cf-name" name="name" type="text" placeholder="Your name" required />
+          <input id="cf-email" name="email" type="email" placeholder="Your email" required />
+          <textarea id="cf-message" name="message" rows="4" placeholder="Tell me about your idea" required></textarea>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p id="formMessage" class="form-message"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Martins Odeshina. Built with HTML, CSS, and Python.</p>
+    <p>Contact: <a href="tel:PHONE_NUMBER">Phone</a> • <a href="mailto:oluwamuyiwaeyitayo@gmail.com">oluwamuyiwaeyitayo@gmail.com</a></p>
+  </footer>
+  <!-- EmailJS SDK (optional): replace placeholders in script.js with your EmailJS IDs to enable direct sending -->
+  <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

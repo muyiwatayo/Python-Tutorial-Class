@@ -45,10 +45,17 @@
           <a class="btn btn-primary" href="projects.html">View Projects</a>
           <a class="btn btn-secondary" href="contact.html">Let’s Talk</a>
         </div>
-        <div class="rotating-gallery" aria-hidden="false">
+        <div class="rotating-gallery" aria-hidden="false" id="rotatingGallery">
+          <button class="gallery-control prev" aria-label="Previous">‹</button>
+          <button class="gallery-control next" aria-label="Next">›</button>
+          <button class="gallery-control play" id="galleryPlay" aria-label="Pause/Play">▐▐</button>
           <img src="assets/photo1.svg" alt="Gallery photo 1"/>
           <img src="assets/photo2.svg" alt="Gallery photo 2"/>
           <img src="assets/photo3.svg" alt="Gallery photo 3"/>
+          <img src="assets/profile.svg" alt="Profile art"/>
+          <img src="assets/cert-1.svg" alt="Certificate 1"/>
+          <img src="assets/cert-2.svg" alt="Certificate 2"/>
+          <img src="assets/project1.svg" alt="Project 1"/>
         </div>
         <ul class="highlights">
           <li>Clean frontends built with HTML, CSS, and JavaScript</li>
@@ -70,18 +77,24 @@
         <p class="eyebrow">Selected Work</p>
         <h2>Cool projects & designs</h2>
       </div>
-      <div class="project-grid">
-        <article class="project-card">
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ui">UI</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+      </div>
+      <div class="project-grid" id="projectGrid">
+        <article class="project-card" data-type="ui">
           <img src="assets/project1.svg" alt="Project one"/>
           <h3>Project One</h3>
           <p>A polished UI demo showcasing animated transitions and responsive layout.</p>
         </article>
-        <article class="project-card">
+        <article class="project-card" data-type="python">
           <img src="assets/project2.svg" alt="Project two"/>
           <h3>Project Two</h3>
           <p>Interactive Python tool with a simple visual front-end for everyday tasks.</p>
         </article>
-        <article class="project-card">
+        <article class="project-card" data-type="design">
           <img src="assets/project3.svg" alt="Project three"/>
           <h3>Project Three</h3>
           <p>Design system samples and component experiments for consistent interfaces.</p>
