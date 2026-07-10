@@ -158,6 +158,12 @@ main {
   border: 4px solid #fff;
 }
 
+/* Subtle avatar hover animation */
+.avatar:hover {
+  transform: rotate(-4deg) scale(1.02);
+  transition: transform 350ms ease;
+}
+
 .panel-card,
 .about-card,
 .card,
@@ -358,6 +364,62 @@ main {
   color: #7a6347;
   font-size: 0.95rem;
 }
+
+/* Social icons in header/footer */
+.social-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.social-links img {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: saturate(0.2) brightness(0.9);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+.social-links a:hover img {
+  transform: translateY(-3px) scale(1.05);
+  filter: saturate(1) brightness(1);
+}
+
+/* Rotating / fading gallery */
+.rotating-gallery {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  height: 320px;
+  margin-top: 18px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e6d1b2;
+  box-shadow: 0 12px 30px rgba(80,50,20,0.08);
+}
+.rotating-gallery img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.04);
+  animation: gallery-slide 12s linear infinite;
+}
+.rotating-gallery img:nth-child(1) { animation-delay: 0s; }
+.rotating-gallery img:nth-child(2) { animation-delay: 4s; }
+.rotating-gallery img:nth-child(3) { animation-delay: 8s; }
+
+@keyframes gallery-slide {
+  0% { opacity: 0; transform: scale(1.04); }
+  8% { opacity: 1; transform: scale(1); }
+  30% { opacity: 1; transform: scale(1); }
+  38% { opacity: 0; transform: scale(0.96); }
+  100% { opacity: 0; transform: scale(0.96); }
+}
+
+/* Small decorative spin for page accents */
+.spin-slow { animation: spin 18s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
 
 @media (max-width: 900px) {
   .hero,
