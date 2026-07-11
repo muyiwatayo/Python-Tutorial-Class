@@ -1,0 +1,252 @@
+:root {
+  --bg: #f7f9ff;
+  --card: #ffffff;
+  --text: #1f2a44;
+  --muted: #51647a;
+  --primary: #3366ff;
+  --accent: #ffb74d;
+  --danger: #e24848;
+  --border: rgba(50, 79, 136, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, rgba(51, 102, 255, 0.16), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255, 183, 77, 0.16), transparent 25%),
+    var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  background: linear-gradient(270deg, rgba(51, 102, 255, 0.95), rgba(51, 102, 255, 0.72));
+  color: white;
+  padding: 18px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.topbar .nav-buttons {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+}
+
+.topbar button {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topbar button:hover {
+  transform: translateY(-1px);
+}
+
+.topbar button.active {
+  background: white;
+  color: #1f2a44;
+}
+
+.topbar button:not(.active) {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+main {
+  padding: 36px 24px 60px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.section-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 22px 46px rgba(40, 50, 75, 0.08);
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.section-card h1,
+.section-card h2,
+.section-card h3 {
+  margin-top: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.grid-2 {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(260px, 1fr) minmax(320px, 1.4fr);
+}
+
+.grid-3 {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+button.primary {
+  background: var(--primary);
+  color: white;
+}
+
+button.secondary {
+  background: #eef3ff;
+  color: var(--text);
+}
+
+button.danger {
+  background: var(--danger);
+  color: white;
+}
+
+button.full-width {
+  width: 100%;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #fff;
+  outline: none;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+small {
+  color: var(--muted);
+}
+
+.callout {
+  background: rgba(51, 102, 255, 0.08);
+  border-left: 4px solid rgba(51, 102, 255, 0.8);
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+}
+
+.alert {
+  margin-top: 18px;
+  border-radius: 16px;
+  padding: 16px 18px;
+}
+
+.alert.info {
+  background: #eef3ff;
+  color: #2250b0;
+}
+
+.alert.warning {
+  background: #fff4e5;
+  color: #7e4a17;
+}
+
+.alert.error {
+  background: #ffe8e8;
+  color: #8b1c1c;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.timetable-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+}
+
+.timetable-table th,
+.timetable-table td {
+  border: 1px solid var(--border);
+  padding: 14px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.timetable-table th {
+  background: #f4f7ff;
+  font-weight: 700;
+}
+
+.timetable-entry {
+  min-height: 56px;
+  white-space: pre-wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(51, 102, 255, 0.1);
+  color: #1d3c96;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.output-box {
+  background: #f7f9ff;
+  border: 1px solid rgba(51, 102, 255, 0.1);
+  border-radius: 18px;
+  padding: 20px;
+  min-height: 180px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.footer-note {
+  display: block;
+  margin-top: 26px;
+  text-align: center;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}

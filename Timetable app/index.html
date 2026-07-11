@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduHub | Student AI Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span>🎓</span>
+          <div>
+            <div>EduHub</div>
+            <small>Your student AI dashboard</small>
+          </div>
+        </div>
+        <div class="nav-buttons">
+          <button id="nav-home" class="active">Home</button>
+          <button id="nav-signup">Signup</button>
+          <button id="nav-login">Login</button>
+          <button id="nav-dashboard">Dashboard</button>
+        </div>
+      </header>
+
+      <main>
+        <section id="page-home" class="section-card">
+          <h1>Welcome to EduHub</h1>
+          <p>
+            EduHub is your student productivity workspace for timetable planning,
+            PDF summarization, and AI-powered homework support.
+          </p>
+          <div class="callout notice" id="server-warning">
+            Run the app from the server with <code>npm start</code> and open <code>http://localhost:5173</code>.
+          </div>
+          <div class="grid-2">
+            <div>
+              <h2>Why EduHub?</h2>
+              <ul>
+                <li>📚 Smart timetable planning for Monday–Friday school weeks.</li>
+                <li>🧠 AI study recommendations based on your schedule.</li>
+                <li>📝 PDF textbook summarizer with TL;DR, notes, and flashcards.</li>
+                <li>🎓 Friendly assignment tutoring that explains concepts step-by-step.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="callout">
+                <strong>Quick start:</strong> Signup, then open the dashboard to start using EduHub.
+              </div>
+              <h3>Feature preview</h3>
+              <div class="grid-3">
+                <div class="section-card">
+                  <h4>Timetable</h4>
+                  <p>Build your class week and keep study time organized.</p>
+                </div>
+                <div class="section-card">
+                  <h4>PDF Summarizer</h4>
+                  <p>Upload notes or textbook PDFs and get readable summaries.</p>
+                </div>
+                <div class="section-card">
+                  <h4>Homework Help</h4>
+                  <p>Ask questions and get step-by-step explanations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="page-signup" class="section-card hidden">
+          <h1>Create your EduHub account</h1>
+          <p>Sign up to access the EduHub dashboard and start learning smarter.</p>
+          <form id="signup-form">
+            <div>
+              <label for="full-name">Full Name</label>
+              <input id="full-name" placeholder="Jane Doe" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div>
+              <label for="school">School / Class</label>
+              <input id="school" placeholder="Level or grade" />
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="Create a password" required />
+            </div>
+            <div>
+              <label for="confirm-password">Confirm Password</label>
+              <input id="confirm-password" type="password" placeholder="Repeat password" required />
+            </div>
+            <button type="submit" class="primary full-width">Sign up</button>
+          </form>
+          <div id="signup-message" class="alert hidden"></div>
+        </section>
+
+        <section id="page-login" class="section-card hidden">
+          <h1>Login to EduHub</h1>
+          <p>Sign in to continue managing your timetable, summaries, and homework help.</p>
+          <form id="login-form">
+            <div>
+              <label for="login-email">Email</label>
+              <input id="login-email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div>
+              <label for="login-password">Password</label>
+              <input id="login-password" type="password" placeholder="Enter your password" required />
+            </div>
+            <button type="submit" class="primary full-width">Log in</button>
+          </form>
+          <div id="login-message" class="alert hidden"></div>
+        </section>
+
+        <section id="page-dashboard" class="hidden">
+          <div class="section-card">
+            <div class="grid-2">
+              <div>
+                <h1>EduHub Dashboard</h1>
+                <p>Welcome to your student workspace. Sign up or log in to start creating your timetable and using AI study tools.</p>
+                <div id="dashboard-greeting" class="small-note"></div>
+              </div>
+              <div class="callout">
+                <strong>Secure setup:</strong> AI is handled on the server, not in the browser.
+              </div>
+            </div>
+          </div>
+
+          <div class="section-card">
+            <h2>🕒 Smart Timetable Manager</h2>
+            <div class="grid-2">
+              <div>
+                <form id="timetable-form">
+                  <div>
+                    <label for="subject-name">Subject Name</label>
+                    <input id="subject-name" placeholder="Biology" required />
+                  </div>
+                  <div>
+                    <label for="day">Day</label>
+                    <select id="day">
+                      <option>Monday</option>
+                      <option>Tuesday</option>
+                      <option>Wednesday</option>
+                      <option>Thursday</option>
+                      <option>Friday</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="time-slot">Lecture / Class Time</label>
+                    <input id="time-slot" placeholder="08:00 - 09:00" required />
+                  </div>
+                  <div>
+                    <label for="room-number">Room / Location</label>
+                    <input id="room-number" placeholder="Room 204" />
+                  </div>
+                  <div>
+                    <label for="note">Optional Note</label>
+                    <textarea id="note" placeholder="Teacher, lab, or equipment"></textarea>
+                  </div>
+                  <button type="submit" class="secondary full-width">Add class 📌</button>
+                </form>
+                <button id="clear-timetable" class="secondary full-width">Clear timetable 🗑️</button>
+                <button id="optimize-study" class="primary full-width">Optimize study plan 🤖</button>
+                <div id="timetable-feedback" class="alert hidden"></div>
+              </div>
+              <div>
+                <div class="badge">Timetable Preview</div>
+                <div class="table-wrapper">
+                  <table class="timetable-table" id="timetable-table">
+                    <thead>
+                      <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Subject</th>
+                        <th>Room</th>
+                        <th>Notes</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div id="study-plan-output" class="output-box hidden"></div>
+          </div>
+
+          <div class="section-card">
+            <h2>📚 PDF Textbook & Note Summarizer</h2>
+            <div class="grid-2">
+              <div>
+                <label for="pdf-file">Upload PDF</label>
+                <input id="pdf-file" type="file" accept="application/pdf" />
+              </div>
+              <div>
+                <label for="summary-depth">Summary Depth</label>
+                <select id="summary-depth">
+                  <option>Quick TL;DR</option>
+                  <option>Detailed Notes</option>
+                  <option>Flashcard Generation</option>
+                </select>
+                <button id="generate-summary" class="primary full-width">Generate summary 📝</button>
+              </div>
+            </div>
+            <div id="summary-output" class="output-box hidden"></div>
+          </div>
+
+          <div class="section-card">
+            <h2>📝 Assignment Help & Homework Solver</h2>
+            <div>
+              <label for="homework-question">Homework question or prompt</label>
+              <textarea id="homework-question" placeholder="Paste your essay prompt, math problem, or tricky question"></textarea>
+            </div>
+            <div>
+              <label for="context-file">Optional rubric or context file (PDF or TXT)</label>
+              <input id="context-file" type="file" accept="application/pdf,text/plain" />
+            </div>
+            <button id="ask-tutor" class="primary full-width">Ask your tutor 🧠</button>
+            <div id="tutor-output" class="output-box hidden"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
